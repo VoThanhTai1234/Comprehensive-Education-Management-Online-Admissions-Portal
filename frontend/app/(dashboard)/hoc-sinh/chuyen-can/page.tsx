@@ -23,7 +23,7 @@ export default function StudentAttendancePage() {
         description="Theo dõi tình trạng đi học và điểm danh của bản thân trong học kỳ." 
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <Card className="shadow-sm border-l-4 border-l-emerald-500 bg-emerald-50/30">
           <CardContent className="p-4">
             <div className="text-sm font-medium text-emerald-800 flex items-center gap-1 mb-2">

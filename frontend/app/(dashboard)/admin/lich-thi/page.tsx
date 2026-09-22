@@ -125,7 +125,7 @@ export default function ExamScheduleManagementPage() {
             <label className="text-sm font-medium text-heading">Tên Kỳ thi</label>
             <Input required defaultValue={editingExam?.name} placeholder="VD: Thi Giữa kỳ 1 (Khối 10)" />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Môn thi</label>
               <Input required defaultValue={editingExam?.subject} placeholder="VD: Toán học" />
@@ -135,7 +135,7 @@ export default function ExamScheduleManagementPage() {
               <Input required defaultValue={editingExam?.room} placeholder="VD: Phòng 101" />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Ngày thi</label>
               <Input required defaultValue={editingExam?.date} placeholder="DD/MM/YYYY" />

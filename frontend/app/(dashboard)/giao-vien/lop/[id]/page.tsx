@@ -12,8 +12,9 @@ import { Save, QrCode, Play, Users, CheckCircle2, AlertTriangle, FileSpreadsheet
 import { MOCK_STUDENT_GRADES, MOCK_GRADE_COMPONENTS } from "@/mocks/grades"
 import { MOCK_ATTENDANCE_SESSIONS, MOCK_ATTENDANCE_RECORDS } from "@/mocks/attendance"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
-export default function ClassDetailPage({ params }: { params: { id: string } }) {
+export default function ClassDetailPage() {
   const { toast } = useToast()
   
   // Grade state
@@ -23,7 +24,7 @@ export default function ClassDetailPage({ params }: { params: { id: string } }) 
   // Attendance state
   const [activeSession, setActiveSession] = useState(MOCK_ATTENDANCE_SESSIONS[0])
   const [isQrVisible, setIsQrVisible] = useState(false)
-  const [attendanceRecords, setAttendanceRecords] = useState(MOCK_ATTENDANCE_RECORDS)
+  const [attendanceRecords] = useState(MOCK_ATTENDANCE_RECORDS)
 
   const handleSaveGrades = () => {
     toast({
@@ -211,7 +212,7 @@ export default function ClassDetailPage({ params }: { params: { id: string } }) 
                 {activeSession.status === "Đang mở" && isQrVisible && (
                   <div className="bg-white p-4 inline-block border-2 border-emerald-500 rounded-lg mx-auto">
                     {/* Giả lập ảnh QR tĩnh */}
-                    <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EDUMS_ATTEND_${activeSession.id}`} alt="QR Code" className="w-48 h-48" />
+                    <Image src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=EDUMS_ATTEND_${activeSession.id}`} alt="QR Code" width={192} height={192} unoptimized className="w-48 h-48" />
                   </div>
                 )}
 

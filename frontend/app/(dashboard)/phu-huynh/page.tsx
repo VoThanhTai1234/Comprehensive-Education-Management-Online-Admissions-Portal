@@ -3,14 +3,12 @@
 import { PageHeader } from "@/components/layout/header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, GraduationCap, CalendarDays, Receipt, ChevronRight, Activity, Bell } from "lucide-react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { useAuth } from "@/lib/contexts/auth-context"
 import { MOCK_NOTIFICATIONS } from "@/mocks/notifications"
 
 export default function ParentDashboardPage() {
-  const { user } = useAuth()
+  // Remove unused user var
   const router = useRouter()
   
   return (
@@ -38,7 +36,7 @@ export default function ParentDashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm border-l-4 border-l-emerald-500 hover:shadow-md transition-all group cursor-pointer" onClick={() => router.push('/phu-huynh/con')}>
+        <Card className="shadow-sm border-l-4 border-l-emerald-500 hover:shadow-md transition-all group cursor-pointer" onClick={() => router.push('/phu-huynh/con-cai')}>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-muted flex items-center gap-2">
               <GraduationCap className="w-4 h-4 text-emerald-500" /> Điểm trung bình
@@ -109,7 +107,7 @@ export default function ParentDashboardPage() {
                 </div>
               </div>
             </div>
-            <Button variant="outline" className="w-full mt-4" onClick={() => router.push("/phu-huynh/con")}>
+            <Button variant="outline" className="w-full mt-4" onClick={() => router.push("/phu-huynh/con-cai?tab=timetable")}>
                Xem Thời khóa biểu đầy đủ
             </Button>
           </CardContent>

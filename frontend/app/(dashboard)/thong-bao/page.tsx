@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { PageHeader } from "@/components/layout/header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -13,12 +13,14 @@ export default function NotificationPage() {
   const role = user?.roles?.[0] as keyof typeof MOCK_NOTIFICATIONS || "STUDENT"
   const notifications = MOCK_NOTIFICATIONS[role] || MOCK_NOTIFICATIONS.STUDENT
 
+  const [currentRole, setCurrentRole] = useState(role)
   const [localNotifications, setLocalNotifications] = useState(notifications)
   const [selectedNotification, setSelectedNotification] = useState<typeof notifications[0] | null>(null)
 
-  useEffect(() => {
+  if (role !== currentRole) {
+    setCurrentRole(role)
     setLocalNotifications(notifications)
-  }, [notifications])
+  }
 
   const getIcon = (type: string) => {
     switch (type) {

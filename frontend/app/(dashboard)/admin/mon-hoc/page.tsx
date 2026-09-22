@@ -66,7 +66,7 @@ export default function SubjectManagementPage() {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className="flex w-full sm:w-auto items-center gap-3">
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3">
               <Select 
                 options={[
                   { label: "Tất cả loại", value: "" },
@@ -138,7 +138,7 @@ export default function SubjectManagementPage() {
         description="Điền thông tin môn học để quản lý việc giảng dạy."
       >
         <form onSubmit={handleSave} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Mã môn</label>
               <Input required defaultValue={editingSubject?.code} placeholder="VD: TOAN" />
@@ -161,7 +161,7 @@ export default function SubjectManagementPage() {
               defaultValue={editingSubject?.department}
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Loại môn</label>
               <Select 

@@ -98,7 +98,7 @@ export const SIDEBAR_MENUS: Record<Role, MenuItem[]> = {
   ],
   PARENT: [
     { label: "Tổng quan",    href: "/phu-huynh",          icon: "LayoutDashboard" },
-    { label: "Con của tôi",  href: "/phu-huynh/con",      icon: "Heart" },
+    { label: "Con của tôi",  href: "/phu-huynh/con-cai",  icon: "Heart" },
     { label: "Học phí",      href: "/phu-huynh/hoc-phi",  icon: "Receipt" },
     { label: "Thông báo",    href: "/phu-huynh/thong-bao",icon: "Bell" },
   ],

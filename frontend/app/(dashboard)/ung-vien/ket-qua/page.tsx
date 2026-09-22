@@ -189,7 +189,7 @@ export default function ResultViewPage() {
                 <p className="text-3xl font-mono font-bold tracking-wider text-heading">EDUMS-26-4029</p>
               </div>
               <div className="h-px w-full bg-border"></div>
-              <div className="grid grid-cols-2 gap-4 text-left text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-sm">
                 <div>
                   <p className="text-muted">Họ và tên</p>
                   <p className="font-semibold text-heading">Trần Bình</p>

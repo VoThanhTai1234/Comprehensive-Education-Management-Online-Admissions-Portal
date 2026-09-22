@@ -53,7 +53,7 @@ export default function LinkChildPage() {
               Bạn đã liên kết thành công với hồ sơ của học sinh <strong className="text-emerald-900">Trần Bình (10A1)</strong>. 
               Từ bây giờ, bạn có thể theo dõi Điểm số, Chuyên cần và Học phí của con.
             </p>
-            <Button onClick={() => router.push('/phu-huynh/con')} className="bg-emerald-600 hover:bg-emerald-700">
+            <Button onClick={() => router.push('/phu-huynh/con-cai')} className="bg-emerald-600 hover:bg-emerald-700">
               Xem thông tin của con
             </Button>
           </CardContent>

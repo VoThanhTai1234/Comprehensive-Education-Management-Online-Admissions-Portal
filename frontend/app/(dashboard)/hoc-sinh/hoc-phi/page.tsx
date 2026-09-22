@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Receipt, CheckCircle2, AlertTriangle, QrCode, Download, X } from "lucide-react"
+import { Receipt, CheckCircle2, AlertTriangle, Download, X } from "lucide-react"
 import { MOCK_INVOICES } from "@/mocks/finance"
 
 export default function StudentTuitionPage() {

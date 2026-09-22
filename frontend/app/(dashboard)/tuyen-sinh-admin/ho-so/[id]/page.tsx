@@ -73,7 +73,7 @@ export default function ApplicationDetailPage({ params }: { params: Promise<{ id
 
               <div>
                 <h4 className="font-semibold text-heading mb-3">Thông tin Đăng ký</h4>
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                   <div>
                     <p className="text-muted">Chiến dịch</p>
                     <p className="font-medium text-heading">Tuyển sinh Lớp 10 Khóa 2026-2029</p>

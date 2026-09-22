@@ -65,7 +65,7 @@ export default function ClassManagementPage() {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className="flex w-full sm:w-auto items-center gap-3">
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3">
               <Select 
                 value={gradeFilter}
                 onChange={(e) => setGradeFilter(e.target.value)}
@@ -139,7 +139,7 @@ export default function ClassManagementPage() {
         description="Điền thông tin lớp học, chọn giáo viên chủ nhiệm và phòng học."
       >
         <form onSubmit={handleSave} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Tên Lớp</label>
               <Input required defaultValue={editingClass?.name} placeholder="VD: 10A1" />
@@ -156,7 +156,7 @@ export default function ClassManagementPage() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Giáo viên chủ nhiệm</label>
               <Select 

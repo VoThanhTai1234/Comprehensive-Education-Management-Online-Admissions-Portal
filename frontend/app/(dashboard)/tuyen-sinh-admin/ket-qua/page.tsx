@@ -82,7 +82,7 @@ export default function ResultPublicationPage() {
       <Card className="shadow-sm">
         <CardContent className="p-0">
           <div className="p-4 border-b bg-background/50 flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex w-full md:w-auto items-center gap-3">
+            <div className="flex flex-col sm:flex-row w-full md:w-auto items-stretch sm:items-center gap-3">
               <Select 
                 options={[
                   { label: "Chiến dịch: TS10-26", value: "TS10-26" },

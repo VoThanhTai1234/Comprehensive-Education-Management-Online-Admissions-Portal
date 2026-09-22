@@ -31,6 +31,9 @@ jobs:
           java-version: '21'
           cache: maven
 
+      - name: Make Maven Wrapper Executable
+        run: chmod +x ./mvnw
+
       - name: Compile
         run: ./mvnw compile -q --no-transfer-progress
 

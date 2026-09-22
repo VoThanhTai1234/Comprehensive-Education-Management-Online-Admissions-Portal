@@ -126,7 +126,7 @@ export default function CampaignManagementPage() {
             <label className="text-sm font-medium">Tên đợt tuyển sinh <span className="text-error">*</span></label>
             <Input defaultValue={selectedCampaign?.name || ""} placeholder="Ví dụ: Tuyển sinh Lớp 10 Khóa 2026-2029" />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium">Mã chiến dịch <span className="text-error">*</span></label>
               <Input defaultValue={selectedCampaign?.id || ""} placeholder="TS10-26" />
@@ -136,7 +136,7 @@ export default function CampaignManagementPage() {
               <Input type="number" defaultValue={selectedCampaign?.target || 500} />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium">Ngày bắt đầu <span className="text-error">*</span></label>
               <Input type="date" />

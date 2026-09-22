@@ -66,7 +66,7 @@ export default function RoomManagementPage() {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
-            <div className="flex w-full sm:w-auto items-center gap-3">
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3">
               <Select 
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
@@ -149,7 +149,7 @@ export default function RoomManagementPage() {
         description="Điền thông tin phòng học, sức chứa tối đa và loại phòng."
       >
         <form onSubmit={handleSave} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Tên Phòng</label>
               <Input required defaultValue={editingRoom?.name} placeholder="VD: Phòng 101" />
@@ -159,7 +159,7 @@ export default function RoomManagementPage() {
               <Input required defaultValue={editingRoom?.building} placeholder="VD: Tòa A" />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-heading">Sức chứa (người)</label>
               <Input required type="number" min={10} max={200} defaultValue={editingRoom?.capacity || 40} />
