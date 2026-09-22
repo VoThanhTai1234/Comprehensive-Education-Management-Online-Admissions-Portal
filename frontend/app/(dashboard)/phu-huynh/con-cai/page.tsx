@@ -6,21 +6,23 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, CalendarDays, CheckCircle2, AlertTriangle, Clock, Medal, CalendarClock } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
 
 import { MOCK_SEMESTER_RESULTS } from "@/mocks/grades"
 import { MOCK_STUDENT_ATTENDANCE_HISTORY } from "@/mocks/attendance"
 
-export default function ChildDetailPage() {
-  const [defaultTab, setDefaultTab] = useState("grades")
+function ChildDetailContent() {
+  const searchParams = useSearchParams()
+  const tabParam = searchParams.get("tab") || "grades"
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search)
-      const tab = params.get("tab")
-      if (tab) setDefaultTab(tab)
-    }
-  }, [])
+  const [currentParam, setCurrentParam] = useState(tabParam)
+  const [activeTab, setActiveTab] = useState(tabParam)
+
+  if (tabParam !== currentParam) {
+    setCurrentParam(tabParam)
+    setActiveTab(tabParam)
+  }
 
   const getAttendanceBadge = (status: string) => {
     if (status === "PRESENT") return <Badge className="bg-emerald-500 hover:bg-emerald-600 border-none">Có mặt</Badge>
@@ -43,7 +45,7 @@ export default function ChildDetailPage() {
         description="Lớp: 10A1 | MSHS: HS26001 | GVCN: Nguyễn Văn Toàn" 
       />
 
-      <Tabs value={defaultTab} onValueChange={setDefaultTab} className="w-full">
+      <Tabs defaultValue={tabParam} value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="mb-4">
           <TabsTrigger value="grades" className="flex items-center gap-2"><BookOpen className="w-4 h-4" /> Kết quả học tập</TabsTrigger>
           <TabsTrigger value="attendance" className="flex items-center gap-2"><CalendarDays className="w-4 h-4" /> Chuyên cần</TabsTrigger>
@@ -232,5 +234,13 @@ export default function ChildDetailPage() {
         </TabsContent>
       </Tabs>
     </div>
+  )
+}
+
+export default function ChildDetailPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center text-muted animate-pulse">Đang tải dữ liệu học sinh...</div>}>
+      <ChildDetailContent />
+    </Suspense>
   )
 }
