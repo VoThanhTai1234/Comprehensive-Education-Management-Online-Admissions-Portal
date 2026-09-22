@@ -1,0 +1,31 @@
+name: edums
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-edums}
+      MYSQL_USER: ${DB_USERNAME:-edums_app}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-edums_dev_password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-edums_root_dev_password}
+      TZ: Asia/Ho_Chi_Minh
+    ports:
+      - "127.0.0.1:${DB_PORT:-3306}:3306"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      - --default-time-zone=+00:00
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root --password=\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    volumes:
+      - edums_mysql_data:/var/lib/mysql
+    stop_grace_period: 30s
+
+volumes:
+  edums_mysql_data:
+

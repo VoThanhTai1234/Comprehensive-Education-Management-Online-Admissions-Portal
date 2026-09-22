@@ -1,0 +1,56 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Java / Maven
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated/
+.springBeans
+.sts4-cache/
+
+# Node.js / Next.js
+**/node_modules/
+**/.next/
+**/out/
+**/dist/
+**/coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Runtime data and local uploads
+logs/
+*.log
+uploads/
+storage/
+
+# Local tooling artifacts
+.codex-doc-review/
+.tmp-phase1-chrome/
